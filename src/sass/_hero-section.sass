@@ -1,0 +1,49 @@
+.catalog 
+  margin-top: 100px
+  transform: translateX(0)
+  transition: all 0.3s ease-in-out
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))
+  grid-template-rows: repeat(auto-fit, minmax(430px, 1fr))
+  grid-gap: 20px
+  &_slided 
+    transform: translateX(-(272 / 1920) * 100vw)
+  
+  &_item
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    background-color: $primary
+    color: $secondary
+    min-height: 430px
+    transform: scale(1)
+    padding: 11px
+    transition: all 0.2s ease-in-out
+    &:hover
+      z-index: 10
+      transform: scale(1.1, 1.07)
+    
+    &_img
+      max-width: 100%
+      // max-height: 240px
+      z-index: 1
+      &_box
+        overflow: hidden
+        // min-height: 260px
+        background-color: $secondary
+        height: 290px
+        width: 100%
+    
+    &_title
+      margin: 11px 0 0 0
+    &_price
+      margin: 0
+    &_tocart
+      // max-width: 75%
+      font-weight: 900
+      width: 40%
+      font-size: 20px
+      padding: 5px
+      margin-top: 10px
+      text-align: center

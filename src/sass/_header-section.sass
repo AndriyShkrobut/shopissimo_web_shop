@@ -1,0 +1,125 @@
+.nav
+  display: flex
+  justify-content: space-between
+  padding-top: 50px
+
+.navBtns
+  display: flex
+  transform: translateX(0)
+  transition: all 0.3s ease-in-out
+  position: relative
+  z-index: 1
+  &_slided
+    transform: translateX(-(203 / 1920) * 100vw)
+
+.logo
+  background-color: $primary
+  color: $secondary
+  padding: 6px 27px
+  font-size: 25px
+  max-height: 100%
+
+.search
+  margin-right: 22px
+  display: flex
+  height: 50px
+  background-color: $primary
+  transition: all 0.3s ease-in-out
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0)
+  &_focus
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8)
+    #searchBtn
+      transition: all 0.2s 0.2s ease-in-out
+  .search_btn
+    background: url("../img/search_icon.svg") center no-repeat
+    background-size: 26px
+    &_close
+      background: url("../img/close_icon(white).svg") center no-repeat
+      background-size: 26px
+  &_box
+    background-color: $primary
+    font-size: 25px
+    color: $secondary
+    height: 100%
+    width: 0
+    transition: all 0.3s ease-in-out
+  
+  ::placeholder
+    color: $secondary
+
+#cartBtn 
+  transition: all 0.2s ease-in
+  opacity: 1
+  .cls-1
+    transition: all 0.3s 0.1s
+
+
+.cart
+  position: fixed
+  top: 0
+  right: -$cart_width
+  // right: 0
+  height: 100vh
+  width: $cart_width
+  padding: 0 11px
+  background-color: $primary
+  color: $secondary
+  overflow-y: scroll
+  transition: all 0.3s ease-in-out
+  z-index: 2
+  
+  &_nav
+    display: flex
+    margin: 50px 0 100px 0
+    justify-content: space-between
+  
+  #cartClose
+    background-color: $secondary
+    transition: all 0.2s ease-in
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0)
+    &:hover
+      box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8)
+  
+  &::-webkit-scrollbar
+    display: none
+  
+  &_title
+    font-size: 40px
+    text-align: center
+    margin-right: 40%
+    line-height: 50px
+    
+  &_items
+    max-height: (543 / 1080) * 100vh
+    overflow-y: scroll
+    display: grid
+    grid-template-columns: 1fr
+    grid-row-gap: 16px
+    margin-bottom: 95px
+    &::-webkit-scrollbar
+      display: none
+  
+  &_item
+    width: 100%
+    background-color: $secondary
+    color: $primary
+    display: flex
+    justify-content: space-between
+    &_img
+      &_box
+
+    &_title
+
+    &_price
+  
+  .clear_total
+    display: flex
+    justify-content: space-between
+    margin-bottom: 45px
+  
+  &_total
+    font-size: 25px
+    padding: 10px 0
+  
+  #purchase
+    margin: 15px auto
