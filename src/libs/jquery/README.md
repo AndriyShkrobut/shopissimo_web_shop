@@ -24,7 +24,7 @@ Below are some of the most common ways to include jQuery.
 [Babel](http://babeljs.io/) is a next generation JavaScript compiler. One of the features is the ability to use ES6/ES2015 modules now, even though browsers do not yet support this feature natively.
 
 ```js
-import $ from 'jquery';
+import $ from "jquery";
 ```
 
 #### Browserify/Webpack
@@ -32,7 +32,7 @@ import $ from 'jquery';
 There are several ways to use [Browserify](http://browserify.org/) and [Webpack](https://webpack.github.io/). For more information on using these tools, please refer to the corresponding project's documention. In the script, including jQuery will usually look like this...
 
 ```js
-var $ = require('jquery');
+var $ = require("jquery");
 ```
 
 #### AMD (Asynchronous Module Definition)
@@ -40,7 +40,9 @@ var $ = require('jquery');
 AMD is a module format built for the browser. For more information, we recommend [require.js' documentation](http://requirejs.org/docs/whyamd.html).
 
 ```js
-define(['jquery'], function($) {});
+define(["jquery"], function($) {
+
+});
 ```
 
 ### Node
@@ -54,12 +56,12 @@ npm install jquery
 For jQuery to work in Node, a window with a document is required. Since no such window exists natively in Node, one can be mocked by tools such as [jsdom](https://github.com/tmpvar/jsdom). This can be useful for testing purposes.
 
 ```js
-require('jsdom').env('', function(err, window) {
+require("jsdom").env("", function(err, window) {
 	if (err) {
 		console.error(err);
 		return;
 	}
 
-	var $ = require('jquery')(window);
+	var $ = require("jquery")(window);
 });
 ```
