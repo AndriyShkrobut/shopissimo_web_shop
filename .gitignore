@@ -48,7 +48,6 @@ npm-debug.log*
 /dist
 
 # Other
-/src/css/
 /.git/
 /**/*.xd
 /**/*.psd

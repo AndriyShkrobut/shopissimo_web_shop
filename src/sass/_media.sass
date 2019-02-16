@@ -1,0 +1,50 @@
+@media screen and (max-width: 768px), (orientation: portrait)
+  .cart
+    right: -100vw
+    width: 100vw
+    padding: 0 (20 / 1000) * 100vh
+    &_slide
+      right: 0
+    &_items
+      margin-right: -11px
+    &_nav
+      margin: ((50 / 1000) * 100vh) 0 ((20 / 1000) * 100vh) 0
+    &_items
+      max-height: 75vh
+    &_item
+      &:not(:last-child)
+        margin-bottom: (20 / 1000) * 100vh
+
+
+@media screen and (max-width: 767.9px) and (min-width: 576px), (orientation: portrait)
+  h1
+    font-size: 23px
+
+  h2
+    font-size: 20px
+
+  h3
+    font-size: 18px
+
+  .cart
+    &_items
+      max-height: 65vh
+
+@media screen and (max-width: 575.9px) and (min-width: 375px)
+  .cart
+    &_items
+      max-height: 55vh
+    &_item
+      &_price
+        margin: 0.5vh
+
+@media screen and (max-width: 374.9px) and (min-width: 320px)
+  .cart
+    &_items
+      max-height: 48vh
+    &_item
+      &_price
+        margin: 0
+      &_amount
+        &_number
+          font-size: 18px
