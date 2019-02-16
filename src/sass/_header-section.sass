@@ -5,12 +5,9 @@
 
 .navBtns
   display: flex
-  transform: translateX(0)
-  transition: all 0.3s ease-in-out
   position: relative
   z-index: 1
-  &_slided
-    transform: translateX(-(376 / 1920) * 100vw)
+  
 
 .logo
   background-color: $primary
@@ -20,9 +17,9 @@
   max-height: 100%
 
 .search
-  margin-right: (19 / 1920) * 100vw
   display: flex
   height: 50px
+  transform: translateX(0)
   background-color: $primary
   transition: all 0.3s ease-in-out
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0)
@@ -43,13 +40,16 @@
     height: 100%
     width: 0
     transition: all 0.3s ease-in-out
+  &_slided
+    transform: translateX(-(376 / 1920) * 100vw)
   
   ::placeholder
     color: $secondary
 
 #cartBtn 
-  transition: all 0.2s ease-in
+  transition: all 0.1s ease
   opacity: 1
+  margin-left: (19 / 1920) * 100vw
   .cls-1
     transition: all 0.3s 0.1s
 
@@ -60,7 +60,8 @@
   // right: 0
   height: 100vh
   width: $cart_width
-  padding: 0 (11 / 1920) * 100vw
+  // padding: 0 (11 / 1920) * 100vw
+  padding: 0 11px
   background-color: $primary
   color: $secondary
   overflow: scroll
@@ -128,7 +129,10 @@
       box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.9)
     &_img
       max-width: 100%
+      align-self: center
       &_box
+        display: flex
+        justify-content: center
         overflow: hidden
         height: 100%
         width: 50%
@@ -138,7 +142,7 @@
       margin: 0 auto
     &_price
       font-weight: 900
-      margin: 2vh
+      margin: 1vh
 
     &_amount
       font-size: 23px

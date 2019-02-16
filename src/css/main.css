@@ -142,15 +142,8 @@ button {
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
   position: relative;
   z-index: 1; }
-  .navBtns_slided {
-    -webkit-transform: translateX(-19.58333vw);
-            transform: translateX(-19.58333vw); }
 
 .logo {
   background-color: #000;
@@ -160,12 +153,13 @@ button {
   max-height: 100%; }
 
 .search {
-  margin-right: 0.98958vw;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
   height: 50px;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
   background-color: #000;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
@@ -191,6 +185,9 @@ button {
     width: 0;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out; }
+  .search_slided {
+    -webkit-transform: translateX(-19.58333vw);
+            transform: translateX(-19.58333vw); }
   .search ::-webkit-input-placeholder {
     color: #FFF; }
   .search ::-moz-placeholder {
@@ -203,9 +200,10 @@ button {
     color: #FFF; }
 
 #cartBtn {
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-  opacity: 1; }
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  opacity: 1;
+  margin-left: 0.98958vw; }
   #cartBtn .cls-1 {
     -webkit-transition: all 0.3s 0.1s;
     transition: all 0.3s 0.1s; }
@@ -216,7 +214,7 @@ button {
   right: -30vw;
   height: 100vh;
   width: 30vw;
-  padding: 0 0.57292vw;
+  padding: 0 11px;
   background-color: #000;
   color: #FFF;
   overflow: scroll;
@@ -298,8 +296,19 @@ button {
       -webkit-box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.9);
               box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.9); }
     .cart_item_img {
-      max-width: 100%; }
+      max-width: 100%;
+      -ms-flex-item-align: center;
+          -ms-grid-row-align: center;
+          align-self: center; }
       .cart_item_img_box {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+           -moz-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         overflow: hidden;
         height: 100%;
         width: 50%; }
@@ -311,7 +320,7 @@ button {
       margin: 0 auto; }
     .cart_item_price {
       font-weight: 900;
-      margin: 2vh; }
+      margin: 1vh; }
     .cart_item_amount {
       font-size: 23px;
       font-family: 'Montserrat';
@@ -349,7 +358,7 @@ button {
     margin: 1.5vh auto; }
 
 .catalog {
-  margin-top: 7.5vh;
+  margin-top: 12.5vh;
   -webkit-transform: translateX(0);
           transform: translateX(0);
   -webkit-transition: all 0.3s ease-in-out;
@@ -399,8 +408,19 @@ button {
               box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8); }
     .catalog_item_img {
       max-width: 100%;
-      z-index: 1; }
+      z-index: 1;
+      -ms-flex-item-align: center;
+          -ms-grid-row-align: center;
+          align-self: center; }
       .catalog_item_img_box {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+           -moz-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         overflow: hidden;
         background-color: #FFF;
         height: 290px;
@@ -418,37 +438,82 @@ button {
       margin-top: 10px;
       text-align: center; }
 
-@media screen and (max-width: 768px), (orientation: portrait) {
+@media screen and (min-width: 1200px) {
+  .catalog {
+    margin-top: 10vh; }
+  .cart_nav {
+    margin: 5vh 0 11.1vh 0; } }
+
+@media screen and (min-width: 768px) and (max-width: 1199.9px) {
+  .cart_items {
+    margin-right: -11px;
+    max-height: 60vh; }
+  .cart_item:not(:last-child) {
+    margin-bottom: 2vh; }
+  .cart_item_title {
+    font-size: 20px; }
+  .cart_item_price {
+    font-size: 18px;
+    margin: 0; }
+  .catalog {
+    margin-top: 7.5vh; } }
+
+@media screen and (min-width: 768px) and (max-width: 1199.9px) and (orientation: landscape) {
+  .search {
+    -webkit-transform: translateX(0);
+            transform: translateX(0); }
+    .search_slided {
+      -webkit-transform: translateX(-33.07292vw);
+              transform: translateX(-33.07292vw); }
   .cart {
-    right: -100vw;
-    width: 100vw;
-    padding: 0 2vh; }
+    top: 0;
+    right: -45vw;
+    width: 45vw; }
     .cart_slide {
       right: 0; }
     .cart_items {
-      margin-right: -11px; }
-    .cart_nav {
-      margin: 5vh 0 2vh 0; }
-    .cart_items {
-      max-height: 75vh; }
-    .cart_item:not(:last-child) {
-      margin-bottom: 2vh; } }
+      margin-right: -11px;
+      max-height: 50vh; }
+    .cart_item_price {
+      margin: 0; }
+  .catalog {
+    -webkit-transform: translateX(0);
+            transform: translateX(0); }
+    .catalog_slided {
+      -webkit-transform: translateX(-38.54167vw);
+              transform: translateX(-38.54167vw); } }
 
 @media screen and (max-width: 767.9px) and (min-width: 576px), (orientation: portrait) {
+  .cart {
+    padding: 0 2vh;
+    right: -100vw;
+    width: 100vw; }
+    .cart_items {
+      max-height: 60vh; }
+    .cart_item_price {
+      margin: 0; }
+    .cart_slide {
+      right: 0; }
+    .cart_nav {
+      margin: 5vh 0 2vh 0; }
   h1 {
     font-size: 23px; }
   h2 {
     font-size: 20px; }
   h3 {
     font-size: 18px; }
-  .cart_items {
-    max-height: 65vh; } }
+  .catalog {
+    margin-top: 7.5vh; }
+    .catalog_item_img {
+      max-width: 80%; } }
 
 @media screen and (max-width: 575.9px) and (min-width: 375px) {
   .cart_items {
     max-height: 55vh; }
   .cart_item_price {
-    margin: 0.5vh; } }
+    margin: 0; }
+  .catalog {
+    margin-top: 5vh; } }
 
 @media screen and (max-width: 374.9px) and (min-width: 320px) {
   .cart_items {
@@ -456,4 +521,16 @@ button {
   .cart_item_price {
     margin: 0; }
   .cart_item_amount_number {
-    font-size: 18px; } }
+    font-size: 18px; }
+  .catalog {
+    margin-top: 5vh; } }
+
+@media screen and (orientation: portrait) {
+  .cart {
+    padding: 0 2vh;
+    right: -100vw;
+    width: 100vw; }
+    .cart_slide {
+      right: 0; }
+    .cart_nav {
+      margin: 5vh 0 2vh 0; } }
