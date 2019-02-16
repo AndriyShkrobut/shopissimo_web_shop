@@ -1,8 +1,7 @@
 "use strict";
 
 document.addEventListener('DOMContentLoaded', function () {
-  var btns = document.querySelector('.navBtns'),
-      search = document.querySelector('.search'),
+  var search = document.querySelector('.search'),
       searchBtn = document.getElementById('searchBtn'),
       searchBox = document.querySelector('.search_box'),
       cartBtn = document.getElementById('cartBtn'),
@@ -35,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
     ) {
         // cartBox.style.right = 0;
         cartBox.classList.toggle('cart_slide');
-        btns.classList.toggle('navBtns_slided');
+        search.classList.toggle('search_slided');
         cartBtn.style.backgroundColor = '#FFF';
         cartBtn.style.opacity = 0;
         catalog.classList.toggle('catalog_slided');
@@ -48,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
     cartBox.className === 'cart cart_slide' || cartBox.style.right !== '') {
       // cartBox.style.right = '-21vw';
       cartBox.classList.toggle('cart_slide');
-      btns.classList.toggle('navBtns_slided');
+      search.classList.toggle('search_slided');
       cartBtn.style.backgroundColor = '#000';
       cartBtn.style.opacity = 1;
       cartIcon.style.fill = '#FFF';
