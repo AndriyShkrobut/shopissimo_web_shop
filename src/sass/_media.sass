@@ -1,22 +1,67 @@
-@media screen and (max-width: 768px), (orientation: portrait)
+@media screen and (min-width: 1200px)
+  .catalog
+    margin-top: (100 / 1000) * 100vh
+
   .cart
-    right: -100vw
-    width: 100vw
-    padding: 0 (20 / 1000) * 100vh
+    &_nav
+      margin: ((50 / 1000) * 100vh) 0 ((111 / 1000) * 100vh) 0
+  
+  
+@media screen and (min-width: 768px) and (max-width: 1199.9px)
+  .cart
+    &_items
+      margin-right: -11px
+      max-height: 60vh
+    &_item
+      &:not(:last-child)
+        margin-bottom: (20 / 1000) * 100vh
+      &_title
+        font-size: 20px
+      &_price
+        font-size: 18px
+        margin: 0
+  .catalog
+    margin-top: (75 / 1000) * 100vh
+
+@media screen and (min-width: 768px) and (max-width: 1199.9px) and (orientation: landscape)
+  .search
+    transform: translateX(0)
+    &_slided
+      transform: translateX(-(635 / 1920) * 100vw)
+  .cart
+    top: 0
+    right: -45vw
+    width: 45vw
     &_slide
       right: 0
     &_items
       margin-right: -11px
-    &_nav
-      margin: ((50 / 1000) * 100vh) 0 ((20 / 1000) * 100vh) 0
-    &_items
-      max-height: 75vh
+      max-height: 50vh
     &_item
-      &:not(:last-child)
-        margin-bottom: (20 / 1000) * 100vh
+      &_price
+        margin: 0
+  .catalog 
+    transform: translateX(0)
+    &_slided 
+      transform: translateX(-(740 / 1920) * 100vw)
 
 
 @media screen and (max-width: 767.9px) and (min-width: 576px), (orientation: portrait)
+  .cart
+    padding: 0 (20 / 1000) * 100vh
+    right: -100vw
+    width: 100vw
+    &_items
+      max-height: 60vh
+    &_item
+      &_price
+        margin: 0
+        
+    &_slide
+      right: 0
+    &_nav
+      margin: ((50 / 1000) * 100vh) 0 ((20 / 1000) * 100vh) 0
+
   h1
     font-size: 23px
 
@@ -26,9 +71,11 @@
   h3
     font-size: 18px
 
-  .cart
-    &_items
-      max-height: 65vh
+  .catalog
+    margin-top: (75 / 1000) * 100vh
+    &_item
+      &_img
+        max-width: 80%
 
 @media screen and (max-width: 575.9px) and (min-width: 375px)
   .cart
@@ -36,7 +83,9 @@
       max-height: 55vh
     &_item
       &_price
-        margin: 0.5vh
+        margin: 0
+  .catalog
+    margin-top: (50 / 1000) * 100vh
 
 @media screen and (max-width: 374.9px) and (min-width: 320px)
   .cart
@@ -48,3 +97,15 @@
       &_amount
         &_number
           font-size: 18px
+  .catalog
+    margin-top: (50 / 1000) * 100vh
+
+@media screen and (orientation: portrait)
+  .cart
+    padding: 0 (20 / 1000) * 100vh
+    right: -100vw
+    width: 100vw
+    &_slide
+      right: 0
+    &_nav
+      margin: ((50 / 1000) * 100vh) 0 ((20 / 1000) * 100vh) 0
