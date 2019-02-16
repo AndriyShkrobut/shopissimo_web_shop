@@ -33,7 +33,7 @@ $RECYCLE.BIN/
 
 
 # Dependency
-node_modules/
+node_modules
 /**/package-lock.json
 
 # Optional npm cache directory
@@ -45,10 +45,9 @@ logs
 npm-debug.log*
 
 # Build directory
-dist/
+/dist
 
 # Other
-/src/css/
 /.git/
 /**/*.xd
 /**/*.psd

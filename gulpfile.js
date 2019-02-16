@@ -20,7 +20,12 @@ gulp.task('css', () => {
     .src('src/sass/**/*.sass')
     .pipe(changed('src/css'))
     .pipe(sass())
-    .pipe(autoprefixer('last 2 versions'))
+    .pipe(
+      autoprefixer({
+        grid: true,
+        browsers: ['last 2 versions', 'ie 6-8', 'Firefox > 20'],
+      })
+    )
     .pipe(gulp.dest('src/css'));
 });
 
