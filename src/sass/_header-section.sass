@@ -53,7 +53,6 @@
   .cls-1
     transition: all 0.3s 0.1s
 
-
 .cart
   position: fixed
   top: 0
@@ -71,13 +70,13 @@
     right: 0
   &::-webkit-scrollbar
     display: none
-  
+
   &_nav
     display: flex
     margin: ((50 / 1000) * 100vh) 0 ((86 / 1000) * 100vh) 0
     justify-content: flex-start
     position: relative
-  
+
   #cartClose
     background-color: $secondary
     transition: all 0.2s ease-in
@@ -92,7 +91,7 @@
     position: absolute
     left: 50%
     transform: translateX(-50%)
-    
+
   &_items
     overflow-y: scroll
     overflow: -moz-scrollbars-none
@@ -114,6 +113,7 @@
         border-radius: 100px
         &:hover
           background-color: #c4c4c4
+
   &_item
     display: flex
     justify-content: space-between
@@ -122,9 +122,8 @@
     color: $primary
     &:not(:last-child)
       margin-bottom: 20px
-    
-    transition: all 0.2s ease-in-out
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0)
+      transition: all 0.2s ease-in-out
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0)
     &:hover
       box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.9)
     &_img
@@ -137,9 +136,6 @@
       align-self: center
       text-align: center
       margin: 0 auto
-      
-
-    &_title
     &_price
       font-weight: 900
       margin: 2vh
