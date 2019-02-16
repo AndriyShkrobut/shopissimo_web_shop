@@ -10,7 +10,7 @@ const gulp = require('gulp'),
   cleanCSS = require('gulp-clean-css'),
   concat = require('gulp-concat'),
   uglify = require('gulp-uglify'),
-  imagemin = require('gulp-imagemin'),
+  image = require('gulp-image'),
   sourcemaps = require('gulp-sourcemaps');
 
 // SASS -> CSS TASK //
@@ -92,11 +92,18 @@ gulp.task(
     gulp
       .src('src/img/**/*')
       .pipe(
-        imagemin([
-          imagemin.gifsicle({ interlaced: true }),
-          imagemin.jpegtran({ progressive: true }),
-          imagemin.optipng({ optimizationLevel: 5 }),
-        ])
+        image({
+          pngquant: true,
+          optipng: false,
+          zopflipng: true,
+          jpegRecompress: false,
+          mozjpeg: true,
+          guetzli: false,
+          gifsicle: true,
+          svgo: true,
+          concurrent: 10,
+          quiet: true, // defaults to false
+        })
       )
       .pipe(gulp.dest('dist/img'));
 
