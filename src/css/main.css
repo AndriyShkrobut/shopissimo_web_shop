@@ -287,13 +287,13 @@ button {
             justify-content: space-between;
     width: 100%;
     background-color: #FFF;
-    color: #000;
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-    -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0);
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0); }
+    color: #000; }
     .cart_item:not(:last-child) {
-      margin-bottom: 20px; }
+      margin-bottom: 20px;
+      -webkit-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0);
+              box-shadow: 0px 0px 20px rgba(0, 0, 0, 0); }
     .cart_item:hover {
       -webkit-box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.9);
               box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.9); }
