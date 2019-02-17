@@ -1,10 +1,11 @@
-@media screen and (min-width: 1200px)
-  .catalog
-    margin-top: (100 / 1000) * 100vh
+// @media screen and (min-width: 1200px)
+//   .catalog
+//     margin-top: (100 / 1000) * 100vh
 
-  .cart
-    &_nav
-      margin: ((50 / 1000) * 100vh) 0 ((111 / 1000) * 100vh) 0
+//   .cart
+//     &_nav
+//       margin-top: (50 / 1000) * 100vh
+//       margin-bottom: (136 / 1000) * 100vh
 
 @media screen and (min-width: 768px) and (max-width: 1199.9px)
   .search
@@ -21,14 +22,18 @@
       &_price
         font-size: 18px
         margin: 0
-  .catalog
-    margin-top: (75 / 1000) * 100vh
+  // .catalog
+  //   margin-top: (75 / 1000) * 100vh
 
 @media screen and (min-width: 768px) and (max-width: 1199.9px) and (orientation: landscape)
   .search
     transform: translateX(0)
+    &_box
+      &_open
+        width: 275px
     &_slided
-      transform: translateX(-(635 / 1920) * 100vw)
+      // transform: translateX(-(635 / 1920) * 100vw)
+      right: (740 / 1920) * 100vw
   .cart
     top: 0
     right: -45vw
@@ -41,12 +46,13 @@
     &_item
       &_price
         margin: 0
-  .catalog 
-    transform: translateX(0)
+  .catalog
     &_slided 
       transform: translateX(-(740 / 1920) * 100vw)
 
 @media screen and (min-width: 320px) and (max-width: 767.9px) and (orientation: landscape)
+  .nav
+    margin-bottom: 90px
   .search
     position: absolute
     right: 0
@@ -55,15 +61,13 @@
     width: 100%
     transition: none
     &_box
-      padding: 10px 20px 10px 15px
+      padding: 10px 30px 10px 15px
       width: 100%
       &_open
-        padding: 10px 20px 10px 15px
+        padding: 10px 30px 10px 15px
         width: 100%
     &_slided
-      transform: translateX(0)
-  .catalog
-    margin-top: 90px
+      right: 0
 
 
 @media screen and (min-width: 576px) and (max-width: 767.9px)
@@ -79,8 +83,6 @@
   h3
     font-size: 18px
   .catalog
-    margin-top: 90px
-    transition: none
     &_slided 
       transform: translateX(0)
     &_item
@@ -94,8 +96,90 @@
     &_item
       &_price
         margin: 0
+
+
+
+@media screen and (max-width: 990.9px) and (min-width: 320px) and (orientation: landscape)
+  body
+    &::-webkit-scrollbar
+      display: none
+  .search
+    transition: none
+    &_slided
+      right: 70px
+
+  .cart
+    padding: 0 (20 / 1000) * 100vw
+    right: -100vw
+    width: 100vw
+    &_slide
+      right: 0
+    &_nav
+      margin: ((20 / 1000) * 100vw) 0 ((20 / 1000) * 100vw) 0
+    &_items
+      overflow-x: scroll
+      overflow-y: hidden
+      display: flex
+      max-height: 40%
+      width: 100%
+      justify-content: space-between
+    &_item
+      display: flex
+      //justify-content: space-between
+      //width: 100%
+      min-width: 49%
+      background-color: $secondary
+      color: $primary
+      &:not(:last-child)
+        margin-right: 20px
+        margin-bottom: 0
+      &_img
+        max-width: 100%
+        align-self: center
+        &_box
+          display: flex
+          justify-content: center
+          overflow: hidden
+          height: 100%
+          width: 50%
+      &_nav
+        align-self: center
+        text-align: center
+        margin: 0 auto
+      &_price
+        font-weight: 900
+        margin: 1vh
+
+      &_amount
+        font-size: 23px
+        font-family: 'Montserrat'
+        font-weight: 700
+        color: $primary
+        &_count
+          color: $primary
+          text-decoration: none
+          transition: all 0.2s ease-in-out
+          text-shadow: 0px 0px 10px rgba(0, 0, 0, 0)
+          &:hover
+            text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9)
+        &_number
+          background-color: $primary
+          color: $secondary
+          text-align: center
+          font-size: 20px
+          width: 12%
+          margin: 0 1%
+
   .catalog
-    margin-top: 100px
+    &_slided 
+      transform: translateX(0)
+
+@media screen and (max-width: 767.9px) and (min-width: 375px) and (orientation: landscape)
+  .search
+    transition: none
+    &_slided
+      top: 70px
+      right: 0
 
 @media screen and (max-width: 374.9px) and (min-width: 320px)
   .cart
@@ -107,10 +191,13 @@
       &_amount
         &_number
           font-size: 18px
-  .catalog
-    margin-top: (50 / 1000) * 100vh
 
 @media screen and (orientation: portrait)
+  body
+    &::-webkit-scrollbar
+      display: none
+  .nav
+    margin-bottom: 90px
   .search
     position: absolute
     right: 0
@@ -119,15 +206,13 @@
     width: 100%
     transition: none
     &_box
-      padding: 10px 20px 10px 15px
+      padding: 10px 30px 10px 15px
       width: 100%
       &_open
-        padding: 10px 20px 10px 15px
+        padding: 10px 30px 10px 15px
         width: 100%
     &_slided
       transform: translateX(0)
-  .catalog
-    margin-top: 90px
 
   .cart
     padding: 0 (20 / 1000) * 100vh
@@ -139,3 +224,7 @@
       margin-right: -11px
     &_nav
       margin: ((50 / 1000) * 100vh) 0 ((20 / 1000) * 100vh) 0
+  .catalog
+    transition: none
+    &_slided 
+      transform: translateX(0)
