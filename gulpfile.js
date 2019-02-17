@@ -116,27 +116,30 @@ gulp.task(
       .pipe(sourcemaps.write())
       .pipe(gulp.dest('dist/css'));
 
+    // gulp
+    //   .src('src/js/main.js')
+    //   .pipe(
+    //     babel({
+    //       presets: ['@babel/preset-env'],
+    //     })
+    //   )
+    //   .pipe(gulp.dest('dist/js'));
+
+    // gulp.src('src/js/libs.min.js').pipe(gulp.dest('dist/js'));
+
+    // MINIFYING EVERY JS FILE //
+
     gulp
-      .src('src/js/main.js')
+      .src('src/js/**/*.js')
+      .pipe(sourcemaps.init())
       .pipe(
         babel({
           presets: ['@babel/preset-env'],
         })
       )
+      .pipe(uglify())
+      .pipe(sourcemaps.write())
       .pipe(gulp.dest('dist/js'));
-
-    gulp.src('src/js/libs.min.js').pipe(gulp.dest('dist/js'));
-
-    // MINIFYING EVERY JS FILE //
-
-    // gulp.src('src/js/**/*.js')
-    // .pipe(sourcemaps.init())
-    // .pipe(babel({
-    //     presets: ['@babel/preset-env']
-    // }))
-    // .pipe(uglify())
-    // .pipe(sourcemaps.write())
-    // .pipe(gulp.dest('dist/js'));
 
     cb();
   })
