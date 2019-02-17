@@ -11,6 +11,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // plus = document.querySelectorAll('#plus'),
   // quantity = document.querySelectorAll('.cart_item_amount_number');
 
+  window.addEventListener('mouseup', event => {
+    if (
+      event.target !== search &&
+      event.target.parentNode !== search &&
+      searchBox.className === 'search_box search_box_open'
+    ) {
+      searchReset.style.opacity = 0;
+      searchBox.classList.toggle('search_box_open');
+    }
+  });
+
   searchBtn.onclick = () => {
     if (searchBox.className === 'search_box') {
       searchReset.style.opacity = 1;
@@ -20,10 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   searchReset.onclick = event => {
-    if (
-      // searchBox.className === 'search_box search_box_open' &&
-      searchBox.value !== ''
-    ) {
+    if (searchBox.value !== '') {
       searchBox.value = '';
       searchBox.focus();
       event.stopPropagation();
@@ -49,17 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
       catalog.classList.toggle('catalog_slided');
     }
   };
-
-  window.addEventListener('mouseup', event => {
-    if (
-      event.target !== search &&
-      event.target.parentNode !== search &&
-      searchBox.className === 'search_box search_box_open'
-    ) {
-      searchReset.style.opacity = 0;
-      searchBox.classList.toggle('search_box_open');
-    }
-  });
 
   searchBox.onfocus = () => {
     if (search.className === 'search') {
