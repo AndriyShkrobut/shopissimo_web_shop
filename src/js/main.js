@@ -2,37 +2,36 @@ document.addEventListener('DOMContentLoaded', () => {
   const search = document.querySelector('.search'),
     searchBtn = document.getElementById('searchBtn'),
     searchBox = document.querySelector('.search_box'),
+    searchReset = document.querySelector('.search_reset'),
     cartBtn = document.getElementById('cartBtn'),
     cartBox = document.querySelector('.cart'),
-    cartIcon = document.querySelector('.cls-1'),
     cartClose = document.getElementById('cartClose'),
     catalog = document.querySelector('.catalog');
   // minus = document.querySelectorAll('#minus'),
   // plus = document.querySelectorAll('#plus'),
   // quantity = document.querySelectorAll('.cart_item_amount_number');
 
-  searchBtn.onclick = event => {
-    if (
-      (searchBox.style.width === '' && searchBox.style.padding === '') ||
-      (searchBox.style.width === '0px' && searchBox.style.padding === '0px')
-    ) {
-      searchBtn.className = 'search_btn_close btn';
-      searchBox.style.width = '400px';
-      searchBox.style.padding = '10px 15px';
+  searchBtn.onclick = () => {
+    if (searchBox.className === 'search_box') {
+      searchReset.style.opacity = 1;
+      searchBox.classList.toggle('search_box_open');
       searchBox.focus();
-      search.classList.toggle('search_focus');
+    }
+  };
+
+  searchReset.onclick = event => {
+    if (
+      // searchBox.className === 'search_box search_box_open' &&
+      searchBox.value !== ''
+    ) {
+      searchBox.value = '';
+      searchBox.focus();
       event.stopPropagation();
-    } else {
-      searchBtn.className = 'search_btn btn';
-      searchBox.style.width = '0px';
-      searchBox.style.padding = '0px';
-      search.classList.toggle('search_focus');
     }
   };
 
   cartBtn.onclick = () => {
-    if (cartBox.className === 'cart' /* || cartBox.style.right === '' */) {
-      // cartBox.style.right = 0;
+    if (cartBox.className === 'cart') {
       cartBox.classList.toggle('cart_slide');
       search.classList.toggle('search_slided');
       cartBtn.style.backgroundColor = '#FFF';
@@ -42,28 +41,36 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   cartClose.onclick = () => {
-    if (
-      /* cartBox.style.right !== '-21vw' */ cartBox.className ===
-        'cart cart_slide' ||
-      cartBox.style.right !== ''
-    ) {
-      // cartBox.style.right = '-21vw';
+    if (cartBox.className === 'cart cart_slide') {
       cartBox.classList.toggle('cart_slide');
       search.classList.toggle('search_slided');
       cartBtn.style.backgroundColor = '#000';
       cartBtn.style.opacity = 1;
-      cartIcon.style.fill = '#FFF';
       catalog.classList.toggle('catalog_slided');
     }
   };
 
-  searchBox.onblur = event => {
+  window.addEventListener('mouseup', event => {
+    if (
+      event.target !== search &&
+      event.target.parentNode !== search &&
+      searchBox.className === 'search_box search_box_open'
+    ) {
+      searchReset.style.opacity = 0;
+      searchBox.classList.toggle('search_box_open');
+    }
+  });
+
+  searchBox.onfocus = () => {
+    if (search.className === 'search') {
+      search.classList.toggle('search_focus');
+      searchReset.style.opacity = 1;
+    }
+  };
+  searchBox.onblur = () => {
     if (search.className === 'search search_focus') {
       search.classList.toggle('search_focus');
-      searchBox.style.padding = '0px';
-      searchBox.style.width = '0px';
-      searchBtn.className = 'search_btn btn';
-      event.stopPropagation();
+      searchReset.style.opacity = 0;
     }
   };
 

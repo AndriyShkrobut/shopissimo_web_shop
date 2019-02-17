@@ -1,10 +1,13 @@
 .nav
   display: flex
+  position: relative
   justify-content: space-between
-  padding-top: (50 / 1000) * 100vh
+  margin-top: (50 / 1000) * 100vh
+  width: 100%
 
 .navBtns
   display: flex
+  flex-direction: column-reverse
   position: relative
   z-index: 1
   
@@ -14,10 +17,12 @@
   color: $secondary
   padding: 6px 27px
   font-size: 25px
-  max-height: 100%
+  max-height: 50px
 
 .search
   display: flex
+  position: absolute
+  right: 70px
   height: 50px
   transform: translateX(0)
   background-color: $primary
@@ -25,14 +30,25 @@
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0)
   &_focus
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6)
-    #searchBtn
-      transition: all 0.2s 0.2s ease-in-out
-  .search_btn
+    
+  &_reset
+    background: url("../img/close_icon(white).svg") center no-repeat
+    width: 20px
+    height: 100%
+    opacity: 0
+    position: absolute
+    top: 0
+    right: 55px
+    background-size: 15px
+    border: 0
+    background-color: $primary
+    transition: all 0.2s ease-in-out
+  &_btn
     background: url("../img/search_icon.svg") center no-repeat
     background-size: 26px
-    &_close
-      background: url("../img/close_icon(white).svg") center no-repeat
-      background-size: 26px
+    // &_close
+    //   background: url("../img/close_icon(white).svg") center no-repeat
+    //   background-size: 26px
   &_box
     background-color: $primary
     font-size: 25px
@@ -40,9 +56,12 @@
     height: 100%
     width: 0
     transition: all 0.3s ease-in-out
+    &_open
+      padding: 10px 30px 10px 15px
+      width: 400px
   &_slided
     transform: translateX(-(376 / 1920) * 100vw)
-  
+
   ::placeholder
     color: $secondary
 
@@ -50,21 +69,35 @@
   transition: all 0.1s ease
   opacity: 1
   margin-left: (19 / 1920) * 100vw
+  position: relative
   .cls-1
     transition: all 0.3s 0.1s
+#cartLength
+  font-family: 'Raleway', sans-serif
+  font-size: 16px
+  font-weight: 900
+  display: block
+  position: absolute
+  bottom: -14px
+  right: -13px
+  background-color: $secondary
+  width: fit-content
+  padding: 0 5px
+  height: 26px
+  border: 2px solid $primary
+  color: $primary
+
 
 .cart
   position: fixed
   top: 0
   right: -$cart_width
-  // right: 0
   height: 100vh
   width: $cart_width
-  // padding: 0 (11 / 1920) * 100vw
   padding: 0 11px
   background-color: $primary
   color: $secondary
-  overflow: scroll
+  overflow-y: scroll
   transition: all 0.3s ease-in-out
   z-index: 2
   &_slide
@@ -76,6 +109,7 @@
     display: flex
     margin: ((50 / 1000) * 100vh) 0 ((86 / 1000) * 100vh) 0
     justify-content: flex-start
+    width: 100%
     position: relative
 
   #cartClose

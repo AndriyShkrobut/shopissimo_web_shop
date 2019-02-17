@@ -8,13 +8,15 @@
   
   
 @media screen and (min-width: 768px) and (max-width: 1199.9px)
+  .search
+    &_box
+      &_open
+        width: 300px
+  
   .cart
     &_items
-      margin-right: -11px
       max-height: 60vh
     &_item
-      &:not(:last-child)
-        margin-bottom: (20 / 1000) * 100vh
       &_title
         font-size: 20px
       &_price
@@ -46,22 +48,10 @@
       transform: translateX(-(740 / 1920) * 100vw)
 
 
-@media screen and (max-width: 767.9px) and (min-width: 576px), (orientation: portrait)
+@media screen and (min-width: 576px) and (max-width: 767.9px)
   .cart
-    padding: 0 (20 / 1000) * 100vh
-    right: -100vw
-    width: 100vw
     &_items
       max-height: 60vh
-    &_item
-      &_price
-        margin: 0
-        
-    &_slide
-      right: 0
-    &_nav
-      margin: ((50 / 1000) * 100vh) 0 ((20 / 1000) * 100vh) 0
-
   h1
     font-size: 23px
 
@@ -70,9 +60,11 @@
 
   h3
     font-size: 18px
-
   .catalog
-    margin-top: (75 / 1000) * 100vh
+    margin-top: 90px
+    transition: none
+    &_slided 
+      transform: translateX(0)
     &_item
       &_img
         max-width: 80%
@@ -85,7 +77,7 @@
       &_price
         margin: 0
   .catalog
-    margin-top: (50 / 1000) * 100vh
+    margin-top: 100px
 
 @media screen and (max-width: 374.9px) and (min-width: 320px)
   .cart
@@ -101,11 +93,31 @@
     margin-top: (50 / 1000) * 100vh
 
 @media screen and (orientation: portrait)
+  .search
+    position: absolute
+    right: 0
+    top: 70px
+    height: 50px
+    width: 100%
+    transition: none
+    &_box
+      padding: 10px 20px 10px 15px
+      width: 100%
+      &_open
+        padding: 10px 20px 10px 15px
+        width: 100%
+    &_slided
+      transform: translateX(0)
+  .catalog
+    margin-top: 90px
+  
   .cart
     padding: 0 (20 / 1000) * 100vh
     right: -100vw
     width: 100vw
     &_slide
       right: 0
+    &_items
+      margin-right: -11px
     &_nav
       margin: ((50 / 1000) * 100vh) 0 ((20 / 1000) * 100vh) 0
