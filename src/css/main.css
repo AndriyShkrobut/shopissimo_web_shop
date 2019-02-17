@@ -203,22 +203,22 @@ button {
     width: 0;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out; }
+    .search_box::-webkit-input-placeholder {
+      color: #FFF; }
+    .search_box::-moz-placeholder {
+      color: #FFF; }
+    .search_box:-ms-input-placeholder {
+      color: #FFF; }
+    .search_box::-ms-input-placeholder {
+      color: #FFF; }
+    .search_box::placeholder {
+      color: #FFF; }
     .search_box_open {
       padding: 10px 30px 10px 15px;
       width: 400px; }
   .search_slided {
     -webkit-transform: translateX(-19.58333vw);
             transform: translateX(-19.58333vw); }
-  .search ::-webkit-input-placeholder {
-    color: #FFF; }
-  .search ::-moz-placeholder {
-    color: #FFF; }
-  .search :-ms-input-placeholder {
-    color: #FFF; }
-  .search ::-ms-input-placeholder {
-    color: #FFF; }
-  .search ::placeholder {
-    color: #FFF; }
 
 #cartBtn {
   -webkit-transition: all 0.1s ease;
