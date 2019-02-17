@@ -522,6 +522,27 @@ button {
       -webkit-transform: translateX(-38.54167vw);
               transform: translateX(-38.54167vw); } }
 
+@media screen and (min-width: 320px) and (max-width: 767.9px) and (orientation: landscape) {
+  .search {
+    position: absolute;
+    right: 0;
+    top: 70px;
+    height: 50px;
+    width: 100%;
+    -webkit-transition: none;
+    transition: none; }
+    .search_box {
+      padding: 10px 20px 10px 15px;
+      width: 100%; }
+      .search_box_open {
+        padding: 10px 20px 10px 15px;
+        width: 100%; }
+    .search_slided {
+      -webkit-transform: translateX(0);
+              transform: translateX(0); }
+  .catalog {
+    margin-top: 90px; } }
+
 @media screen and (min-width: 576px) and (max-width: 767.9px) {
   .cart_items {
     max-height: 60vh; }
