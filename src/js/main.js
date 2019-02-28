@@ -6,10 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     cartBtn = document.getElementById('cartBtn'),
     cartBox = document.querySelector('.cart'),
     cartClose = document.getElementById('cartClose'),
-    catalog = document.querySelector('.catalog');
-  // minus = document.querySelectorAll('#minus'),
-  // plus = document.querySelectorAll('#plus'),
-  // quantity = document.querySelectorAll('.cart_item_amount_number');
+    catalog = document.querySelector('.catalog'),
+    quantityBox = document.querySelectorAll('.cart_item_amount');
 
   window.addEventListener('mouseup', event => {
     if (
@@ -88,13 +86,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // let number = quantity.value;
-  // minus.forEach(min => {
-  //   // eslint-disable-next-line no-param-reassign
-  //   min.onclick = function(event) {
-  //     number += 1;
-
-  //     event.preventDefault();
-  //   };
-  // });
+  quantityBox.forEach(item => {
+    item.addEventListener('click', function(event) {
+      const target = event.target;
+      if (target.id === 'plus') {
+        this.childNodes[3].value = parseInt(this.childNodes[3].value) + 1;
+      } else if (target.id === 'minus' && this.childNodes[3].value != 1) {
+        this.childNodes[3].value = parseInt(this.childNodes[3].value) - 1;
+      }
+      event.preventDefault();
+    });
+  });
 });
